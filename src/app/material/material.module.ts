@@ -8,7 +8,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-
+import {MatTableModule} from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { LayoutModule } from '@angular/cdk/layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -22,6 +27,11 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    MatTableModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatFormFieldModule,
+    MatStepperModule
   ],
   exports: [
     MatButtonModule, // para que otros modulos lo puedan usar
@@ -32,6 +42,12 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule,
+    LayoutModule,
+    MatFormFieldModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule { }

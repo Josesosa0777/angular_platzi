@@ -1,0 +1,50 @@
+<!-- enlazamos el formulario global -->
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Product</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <!-- <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Id" formControlName="id" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Title" formControlName="title" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Price" formControlName="price" matInput type="number">
+                    </mat-form-field>
+                    <!-- Se muestra el mensaje del div si hay errores o si se ha puesto un valor, 
+                        esto para prevenir que por default muestre un error si está vacío -->
+                    <div *ngIf="form.get('price').errors && form.get('price').dirty">
+                        <p *ngIf="form.get('price').hasError('price_invalid')">El precio no debe ser mayor a 10000</p>
+                        <p *ngIf="form.get('price').hasError('required')">El campo es requerido</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <textarea placeholder="Text" formControlName="description" matInput></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- <mat-form-field>
+                <input formControlName="image" matInput type="text">
+            </mat-form-field> -->
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Save</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
